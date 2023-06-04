@@ -1,0 +1,136 @@
+:root {
+    /* Primary colors */
+    --clr-red: hsl(0, 78%, 62%);
+    --clr-cyan: hsl(180, 62%, 55%);
+    --clr-orange: hsl(34, 97%, 64%);
+    --clr-blue: hsl(212, 86%, 64%);
+
+    /* Secondary colors */
+    --clr-very-dark-blue: hsl(234, 12%, 34%);
+    --clr-grayish-blue: hsl(229, 6%, 66%);
+    --clr-very-light-gray: hsl(0, 0%, 98%);
+
+    /* Font */
+    --ff-poppins:'Poppins', sans-serif;
+
+    /* Font size */
+    --fs-400: 0.9375rem;
+
+    /* Font weights */
+    --fw-200: 200;
+    --fw-400: 400;
+    --fw-600: 600;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 5.5rem 0 0 0;
+    line-height: 1.5;
+    background-color: var(--clr-very-light-gray);
+    font-family: var(--ff-poppins);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-400);
+}
+
+img,
+svg  {
+    display: block;
+    max-width: 100%;
+}
+
+img {
+    margin-left: auto;
+}
+
+h3 {
+    font-weight: var(--fw-600);
+    color: var(--clr-very-dark-blue);
+}
+
+p {
+    color: var(--clr-grayish-blue);
+}
+
+.container {
+    /* border: 1px solid gold; */
+    margin-inline: auto;
+    width: min(90%, 1000px);
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.header {
+    color: var(--clr-very-dark-blue);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header p {
+    margin: 0 0 .1rem 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: var(--fw-200);
+    color: var(--clr-very-dark-blue);
+}
+
+.header h3, 
+.cards h3 {
+    margin-top: .1rem;
+}
+
+.cards {
+    background-color: var(--clr-very-light-gray);
+    line-height: 1.7;
+    box-shadow: 0 0 2px;
+    border-radius: .3rem;
+    padding: 1rem 1rem 2rem 1rem;
+}
+
+.cards__supervisor {
+    border-top: .2rem solid var(--clr-cyan);
+}
+
+.cards__team-builder {
+    border-top: .2rem solid var(--clr-red);
+}
+
+.cards__karma {
+    border-top: .2rem solid var(--clr-orange);
+}
+
+.cards__calculator {
+    border-top: .2rem solid var(--clr-blue);
+}
+
+@media all and (min-width: 650px) {
+    .grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .cards__supervisor {
+        grid-row: 2;
+        grid-column: span 2;
+    }
+
+    .cards__team-builder {
+        grid-column: 3 / span 2; 
+    }
+
+    .cards__karma {
+        grid-column: 3 / span 2;
+        grid-row: 3;
+    }
+
+    .cards__calculator {
+        grid-row-start: 2;
+        grid-column: 5 / span 2;
+    }
+}
